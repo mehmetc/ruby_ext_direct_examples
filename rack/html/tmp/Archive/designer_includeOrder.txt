@@ -1,0 +1,4 @@
+<script type="text/javascript" src="app/view/ui/MyViewport.js"></script>
+<script type="text/javascript" src="app/view/MyViewport.js"></script>
+<script type="text/javascript" src="app/store/NamesDirectStore.js"></script>
+<script type="text/javascript" src="app/store/CountryDirectStore.js"></script>

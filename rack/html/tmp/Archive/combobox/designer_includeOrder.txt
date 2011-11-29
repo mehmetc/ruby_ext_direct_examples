@@ -1,0 +1,4 @@
+<script type="text/javascript" src="app/view/ui/MyGridPanel.js"></script>
+<script type="text/javascript" src="app/view/MyGridPanel.js"></script>
+<script type="text/javascript" src="app/store/MyDirectStore.js"></script>
+<script type="text/javascript" src="app/store/MyDirectStore1.js"></script>

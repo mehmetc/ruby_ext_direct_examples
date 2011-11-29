@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>chart1.xds</title>
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-4.0.2a/resources/css/ext-all.css"/>
+    <script type="text/javascript" src="http://extjs.cachefly.net/ext-4.0.2a/ext-all-debug.js"></script>
+	<script type="text/javascript" charset="utf-8" src='http://127.0.0.1:9292/api'></script>
+	<script type="text/javascript" charset="utf-8">
+		
+	    Ext.direct.Manager.addProvider(REMOTING_API);
+		var store = Ext.create('Ext.data.DirectStore',{
+			proxy: {
+				type:'direct',
+				directFn: CountQueries.get
+			}
+		});	
+		
+		Ext.onReady(function(){
+		    var win = Ext.create('Ext.Window', {
+		        width: 800,
+		        height: 600,
+		        minHeight: 400,
+		        minWidth: 550,
+		        hidden: false,
+		        maximizable: true,
+		        title: 'Line Chart',
+		        renderTo: Ext.getBody(),
+		        layout: 'fit',
+		        items: {
+		            xtype: 'chart',
+		            style: 'background:#fff',
+		            animate: true,
+		            store: store,
+		            shadow: true,
+		            theme: 'Category1',
+		            legend: {
+		                position: 'right'
+		            },
+		            axes: [{
+		                type: 'Numeric',
+		                minimum: 0,
+		                position: 'left',
+		                fields: ['count'],
+		                title: 'Count',
+		                minorTickSteps: 1		                
+		            	},{
+		                type: 'Category',
+		                position: 'bottom',
+		                fields: ['timestamp'],
+		                title: 'Time'
+		            }],
+		            series: [{
+		                type: 'line',
+		                axis: 'left',
+		                xField: 'timestamp',
+		                yField: 'count'
+		            }]
+		        }
+		    });
+		});
+	</script>
+
+</head>
+<body></body>
+</html>

@@ -1,0 +1,330 @@
+{
+    "name": "addressBook.xds",
+    "settings": {
+        "urlPrefix": "http://localhost/",
+        "directAPI": "http://127.0.0.1:9292/api",
+        "spacesToIndent": "4",
+        "codeGenFormat": "Class",
+        "exportPath": ".",
+        "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "exportXDSFiles": true,
+        "genTimestamps": true,
+        "appName": "MyApp"
+    },
+    "xdsVersion": "1.2.0",
+    "components": [
+        {
+            "id": "ExtBox1-ext-gen17103",
+            "type": "viewport",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "MyViewPort",
+                "layout": "fit",
+                "designer|userClassName": "MyViewport"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen16444",
+                    "type": "gridpanel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoRender": true,
+                        "height": null,
+                        "id": "addressBook",
+                        "width": null,
+                        "title": "Address book",
+                        "store": "NamesDirectStore",
+                        "columnLines": true,
+                        "designer|userClassName": "MyGridPanel"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen16479",
+                            "type": "gridview",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridView"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen25954",
+                            "type": "gridroweditingplugin",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "userConfig": {
+                                "designer|userClassName": "MyRowEditingPlugin"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen26265",
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyToolbar",
+                                "dock": "top"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen26406",
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "addAddress",
+                                        "id": "addAddress",
+                                        "ui": null,
+                                        "text": "Add Address",
+                                        "designer|userClassName": "MyButton",
+                                        "layout|flex": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen32065",
+                            "type": "gridcolumn",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "Name",
+                                "designer|userClassName": "MyColumn2"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen32074",
+                            "type": "gridcolumn",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "address",
+                                "text": "Address",
+                                "designer|userClassName": "MyColumn3"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen32459",
+                            "type": "gridcolumn",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "country",
+                                "text": "Country",
+                                "designer|userClassName": "MyColumn"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen32860",
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "field",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "CountryComboBox",
+                                        "fieldLabel": "Country",
+                                        "hideLabel": true,
+                                        "displayField": "value",
+                                        "store": "CountryDirectStore",
+                                        "valueField": "code",
+                                        "designer|userClassName": "MyComboBox"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "stores": [
+        {
+            "id": "ExtBox1-ext-gen17397",
+            "type": "directstore",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": true,
+                "storeId": "NamesDirectStore",
+                "designer|userClassName": "NamesDirectStore"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen17401",
+                    "type": "directproxy",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": "{\nread:Names.get,\nupdate:Names.set,\ncreate:Names.create\n}",
+                        "designer|userClassName": "Direct Proxy"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen17407",
+                            "type": "jsonreader",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "Json Reader"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen18104",
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name",
+                        "type": "string",
+                        "designer|userClassName": "MyField"
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen18111",
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "address",
+                        "type": "string",
+                        "designer|userClassName": "MyField1"
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen32658",
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "country",
+                        "type": "string",
+                        "designer|userClassName": "MyField2"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen33201",
+            "type": "directstore",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "storeId": "CountryDirectStore",
+                "designer|userClassName": "CountryDirectStore"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen33205",
+                    "type": "directproxy",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": "{\nread:Countries.get\n}",
+                        "designer|userClassName": "Direct Proxy1"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen33211",
+                            "type": "jsonreader",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "Json Reader1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen33808",
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "field",
+                        "designer|userClassName": "MyField3"
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen33815",
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "field",
+                        "designer|userClassName": "MyField4"
+                    }
+                }
+            ]
+        }
+    ],
+    "framework": "ext40"
+}

@@ -1,0 +1,1 @@
+examples for [ruby_ext_direct](https://github.com/mehmetc/ruby_ext_direct "ruby_ext_direct")
